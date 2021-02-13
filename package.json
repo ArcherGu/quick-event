@@ -1,0 +1,24 @@
+{
+    "name": "quick-event",
+    "version": "0.0.1",
+    "description": "quick-event is a JavaScript event library that provides tools that enable your application components to communicate with each other by dispatching events and listening for them. With eventpp you can easily implement signal/slot mechanism, or observer pattern.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "quick-event",
+        "event",
+        "dispatcher",
+        "listener",
+        "callback",
+        "callbacklist"
+    ],
+    "author": "ArcherGu",
+    "license": "MIT",
+    "homepage": "https://github.com/ArcherGu/quick-event",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ArcherGu/quick-event.git"
+    }
+}
