@@ -4,6 +4,7 @@
     "description": "quick-event is a JavaScript event library that provides tools that enable your application components to communicate with each other by dispatching events and listening for them. With eventpp you can easily implement signal/slot mechanism, or observer pattern.",
     "main": "index.js",
     "scripts": {
+        "build": "rimraf dist && rollup -c",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -19,6 +20,15 @@
     "homepage": "https://github.com/ArcherGu/quick-event",
     "repository": {
         "type": "git",
-        "url": "git://github.com/ArcherGu/quick-event.git"
+        "url": "https://github.com/ArcherGu/quick-event.git"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^8.1.1",
+        "prettier": "^2.2.1",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.39.0",
+        "tslint": "^6.1.3",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^4.1.5"
     }
 }
