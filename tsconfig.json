@@ -23,7 +23,9 @@
             "ESNext",
             "DOM"
         ],
-        "types": [],
+        "types": [
+            "jest"
+        ],
     },
     "include": [
         "src/**/*.ts",

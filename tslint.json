@@ -13,7 +13,8 @@
         "exclude": [
             "**/*.json",
             "node_modules",
-            "dist/**/*"
+            "dist/**/*",
+            "**/*.spec.ts"
         ]
     }
 }

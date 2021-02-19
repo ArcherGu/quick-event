@@ -26,10 +26,10 @@ export class CallbackList {
     public append(callback: Callback): Node {
         const node = new Node(callback, this._getNextCounter());
 
-        if (this._head) {
+        if (this._tail) {
             node.previous = this._tail;
-            this._tail = node;
             this._tail.next = node;
+            this._tail = node;
         } else {
             this._head = node;
             this._tail = node;

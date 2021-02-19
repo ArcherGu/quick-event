@@ -6,9 +6,7 @@
     "source": "src/index.ts",
     "scripts": {
         "build": "rimraf dist && rollup -c",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "tsc": "tsc",
-        "ts": "ts-node -P ./__tests__/tsconfig-util.json ./__tests__/test_callbacklist_basic.ts"
+        "test": "jest --config"
     },
     "keywords": [
         "quick-event",
@@ -30,11 +28,13 @@
         "@babel/preset-env": "^7.12.17",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-typescript": "^8.1.1",
+        "@types/jest": "^26.0.20",
         "jest": "^26.6.3",
         "prettier": "^2.2.1",
         "rimraf": "^3.0.2",
         "rollup": "^2.39.0",
         "rollup-plugin-dts": "^2.0.1",
+        "ts-jest": "^26.5.1",
         "ts-node": "^9.1.1",
         "tslint": "^6.1.3",
         "tslint-config-prettier": "^1.18.0",
