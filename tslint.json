@@ -12,7 +12,8 @@
     "linterOptions": {
         "exclude": [
             "**/*.json",
-            "node_modules"
+            "node_modules",
+            "dist/**/*"
         ]
     }
 }
