@@ -1,4 +1,4 @@
-import { Callback } from "./types";
+import { Callback } from "../types";
 
 export class Node {
     public previous: Node | null = null;

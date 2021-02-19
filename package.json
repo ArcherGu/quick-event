@@ -2,10 +2,13 @@
     "name": "quick-event",
     "version": "0.0.1",
     "description": "quick-event is a JavaScript event library that provides tools that enable your application components to communicate with each other by dispatching events and listening for them. With eventpp you can easily implement signal/slot mechanism, or observer pattern.",
-    "main": "index.js",
+    "main": "dist/index.js",
+    "source": "src/index.ts",
     "scripts": {
         "build": "rimraf dist && rollup -c",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "tsc": "tsc",
+        "ts": "ts-node -P ./__tests__/tsconfig-util.json ./__tests__/test_callbacklist_basic.ts"
     },
     "keywords": [
         "quick-event",
@@ -27,9 +30,12 @@
         "@babel/preset-env": "^7.12.17",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-typescript": "^8.1.1",
+        "jest": "^26.6.3",
         "prettier": "^2.2.1",
         "rimraf": "^3.0.2",
         "rollup": "^2.39.0",
+        "rollup-plugin-dts": "^2.0.1",
+        "ts-node": "^9.1.1",
         "tslint": "^6.1.3",
         "tslint-config-prettier": "^1.18.0",
         "typescript": "^4.1.5"

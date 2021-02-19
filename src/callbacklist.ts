@@ -1,6 +1,5 @@
-import { Node } from './node';
+import { Node } from './helper/node';
 import { Callback, EventjsParams } from './types';
-
 
 export class CallbackList {
     private _head: Node | null = null;

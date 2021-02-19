@@ -2,7 +2,7 @@
     "compilerOptions": {
         "rootDir": "src",
         "baseUrl": ".",
-        "outDir": "./lib",
+        "outDir": "./dist",
         "sourceMap": false,
         "target": "ESNext",
         "module": "ESNext",
@@ -17,15 +17,11 @@
         "noImplicitAny": false,
         "removeComments": false,
         "declaration": true,
-        "declarationMap": false,
-        "declarationDir": "./lib/types",
-        "paths": {
-            "@/*": [
-                "src/*"
-            ],
-        },
+        "declarationMap": true,
+        "declarationDir": "./dist/types",
         "lib": [
-            "ESNext"
+            "ESNext",
+            "DOM"
         ],
         "types": [],
     },
@@ -34,6 +30,8 @@
     ],
     "exclude": [
         "node_modules",
-        "__tests__"
+        "dist",
+        "__tests__",
+        "**/*.spec.ts"
     ]
 }

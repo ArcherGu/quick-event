@@ -1,5 +1,5 @@
-import { CallbackList } from '@/callbacklist';
+import { CallbackList } from './callbacklist';
 
-export default {
-    CallbackList,
+export {
+    CallbackList
 };
