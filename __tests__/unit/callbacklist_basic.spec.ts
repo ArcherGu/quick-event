@@ -139,4 +139,40 @@ describe('CallbackList', () => {
         expect(removalTester(7, 3, [0, 2, 1, 3, 5, 4, 6])).toBeTruthy();
         expect(removalTester(7, 3, [6, 4, 5, 3, 1, 2, 0])).toBeTruthy();
     });
+
+    describe("forEach and forEachIf", () => {
+        let callbackList = new CallbackList();
+        const itemCount = 5;
+        let dataList = new Array(itemCount);
+        for (let i = 0; i < itemCount; ++i) {
+            callbackList.append(() => {
+                dataList[i] = i + 1;
+            });
+        }
+
+        it('forEach', () => {
+            dataList.fill(0);
+            callbackList.forEach((callback) => {
+                callback();
+            });
+
+            expect(checkArraysEqual(dataList, [1, 2, 3, 4, 5])).toBeTruthy();
+        });
+
+        it('forEachIf', () => {
+            dataList.fill(0);
+            const result = callbackList.forEachIf((callback) => {
+                const index = 2;
+                const isZero = (dataList[index] == 0);
+                callback();
+                if (isZero && dataList[index] != 0) {
+                    return false;
+                }
+                return true;
+            });
+
+            expect(!result).toBeTruthy();
+            expect(checkArraysEqual(dataList, [1, 2, 3, 0, 0])).toBeTruthy();
+        });
+    });
 });
