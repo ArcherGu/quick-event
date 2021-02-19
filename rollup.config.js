@@ -1,5 +1,7 @@
 import { version } from './package.json';
 import typescript from '@rollup/plugin-typescript';
+import { getBabelOutputPlugin } from '@rollup/plugin-babel';
+import * as path from "path";
 
 const banner = `/*!
  * quick-event v${version}
@@ -23,7 +25,13 @@ export default {
         name: 'quick-event',
         banner
     }],
-    plugins: [typescript({
-        tsconfig: "tsconfig.json",
-    })]
+    plugins: [
+        typescript({
+            tsconfig: "tsconfig.json",
+        }),
+        getBabelOutputPlugin({
+            configFile: path.resolve(__dirname, 'babel.config.json'),
+            allowAllFormats: true
+        })
+    ]
 };

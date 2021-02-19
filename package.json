@@ -23,6 +23,9 @@
         "url": "https://github.com/ArcherGu/quick-event.git"
     },
     "devDependencies": {
+        "@babel/core": "^7.12.17",
+        "@babel/preset-env": "^7.12.17",
+        "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-typescript": "^8.1.1",
         "prettier": "^2.2.1",
         "rimraf": "^3.0.2",
