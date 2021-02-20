@@ -1,9 +1,9 @@
-import { Node } from './helper/node';
+import { CallbackNode } from './helper/node';
 import { Callback, EventjsParams } from './types';
 
 export class CallbackList {
-    private _head: Node | null = null;
-    private _tail: Node | null = null;
+    private _head: CallbackNode | null = null;
+    private _tail: CallbackNode | null = null;
     private _currentCounter: number = 0;
     private _canContinueInvoking: ((...args: any[]) => boolean) | null | undefined;
     private _argumentsAsArray: boolean;
@@ -23,8 +23,8 @@ export class CallbackList {
         }
     }
 
-    public append(callback: Callback): Node {
-        const node = new Node(callback, this._getNextCounter());
+    public append(callback: Callback): CallbackNode {
+        const node = new CallbackNode(callback, this._getNextCounter());
 
         if (this._tail) {
             node.previous = this._tail;
@@ -38,8 +38,8 @@ export class CallbackList {
         return node;
     }
 
-    public prepend(callback: Callback): Node {
-        const node = new Node(callback, this._getNextCounter());
+    public prepend(callback: Callback): CallbackNode {
+        const node = new CallbackNode(callback, this._getNextCounter());
 
         if (this._head) {
             node.next = this._head;
@@ -53,13 +53,13 @@ export class CallbackList {
         return node;
     }
 
-    public insert(callback: Callback, before: Callback | Node): Node {
+    public insert(callback: Callback, before: Callback | CallbackNode): CallbackNode {
         const beforeNode = this._doFindNode(before);
         if (!beforeNode) {
             return this.append(callback);
         }
 
-        const node = new Node(callback, this._getNextCounter());
+        const node = new CallbackNode(callback, this._getNextCounter());
 
         node.previous = beforeNode.previous;
         node.next = beforeNode;
@@ -75,7 +75,7 @@ export class CallbackList {
         return node;
     }
 
-    public remove(handle: Callback | Node): boolean {
+    public remove(handle: Callback | CallbackNode): boolean {
         const node = this._doFindNode(handle);
         if (!node) {
             return false;
@@ -105,7 +105,7 @@ export class CallbackList {
         return !this._head;
     }
 
-    public has(handle: Callback | Node): boolean {
+    public has(handle: Callback | CallbackNode): boolean {
         return !!this._doFindNode(handle);
     }
 
@@ -148,6 +148,14 @@ export class CallbackList {
         this._applyDispatch(...args);
     }
 
+    public getHead() {
+        return this._head;
+    }
+
+    public getTail() {
+        return this._tail;
+    }
+
     private _getNextCounter() {
         let result = ++this._currentCounter;
         if (result === 0) {
@@ -163,7 +171,7 @@ export class CallbackList {
         return result;
     }
 
-    private _doFindNode(handle: Callback | Node) {
+    private _doFindNode(handle: Callback | CallbackNode) {
         let node = this._head;
         while (node) {
             if (node === handle || node.callback === handle) {

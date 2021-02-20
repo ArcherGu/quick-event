@@ -1,5 +1,5 @@
-import { CallbackList } from "../../src";
-import { checkArraysEqual } from "./utils";
+import { CallbackList, CallbackNode } from "../../src";
+import { checkArraysEqual, verifyLinkedList } from "./utils";
 
 describe('CallbackList', () => {
     it('nested callbacks, new callbacks should not be triggered', () => {
@@ -174,5 +174,75 @@ describe('CallbackList', () => {
             expect(!result).toBeTruthy();
             expect(checkArraysEqual(dataList, [1, 2, 3, 0, 0])).toBeTruthy();
         });
+    });
+
+    it('append/remove/insert', () => {
+        let callbackList = new CallbackList();
+        let h100: CallbackNode,
+            h101: CallbackNode,
+            h102: CallbackNode,
+            h103: CallbackNode,
+            h104: CallbackNode,
+            h105: CallbackNode,
+            h106: CallbackNode,
+            h107: CallbackNode;
+
+        const callbackFactory = (id: number) => () => id;
+
+        {
+            let handle = callbackList.append(callbackFactory(100));
+            h100 = handle;
+            verifyLinkedList(callbackList, [100]);
+        }
+
+        {
+            let handle = callbackList.append(callbackFactory(101));
+            h101 = handle;
+            verifyLinkedList(callbackList, [100, 101]);
+        }
+
+        {
+            let handle = callbackList.append(callbackFactory(102));
+            h102 = handle;
+            verifyLinkedList(callbackList, [100, 101, 102]);
+        }
+
+        {
+            let handle = callbackList.append(callbackFactory(103));
+            h103 = handle;
+            verifyLinkedList(callbackList, [100, 101, 102, 103]);
+        }
+
+        {
+            let handle = callbackList.append(callbackFactory(104));
+            h104 = handle;
+            verifyLinkedList(callbackList, [100, 101, 102, 103, 104]);
+        }
+
+        {
+            let handle = callbackList.insert(callbackFactory(105), h103); // before 103
+            h105 = handle;
+            verifyLinkedList(callbackList, [100, 101, 102, 105, 103, 104]);
+
+            h107 = callbackList.insert(callbackFactory(107), h100); // before 100
+            verifyLinkedList(callbackList, [107, 100, 101, 102, 105, 103, 104]);
+
+            h106 = callbackList.insert(callbackFactory(106), handle); // before 105
+            verifyLinkedList(callbackList, [107, 100, 101, 102, 106, 105, 103, 104]);
+        }
+
+        callbackList.remove(h100);
+        verifyLinkedList(callbackList, [107, 101, 102, 106, 105, 103, 104]);
+
+        callbackList.remove(h103);
+        callbackList.remove(h102);
+        verifyLinkedList(callbackList, [107, 101, 106, 105, 104]);
+
+        callbackList.remove(h105);
+        callbackList.remove(h104);
+        callbackList.remove(h106);
+        callbackList.remove(h101);
+        callbackList.remove(h107);
+        verifyLinkedList(callbackList, []);
     });
 });
