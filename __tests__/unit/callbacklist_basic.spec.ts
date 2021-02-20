@@ -1,5 +1,5 @@
 import { CallbackList, CallbackNode } from "../../src";
-import { checkArraysEqual, verifyLinkedList } from "./utils";
+import { callbackFactory, checkArraysEqual, verifyLinkedList } from "./utils";
 
 describe('CallbackList', () => {
     it('nested callbacks, new callbacks should not be triggered', () => {
@@ -187,8 +187,6 @@ describe('CallbackList', () => {
             h106: CallbackNode,
             h107: CallbackNode;
 
-        const callbackFactory = (id: number) => () => id;
-
         {
             let handle = callbackList.append(callbackFactory(100));
             h100 = handle;
@@ -244,5 +242,142 @@ describe('CallbackList', () => {
         callbackList.remove(h101);
         callbackList.remove(h107);
         verifyLinkedList(callbackList, []);
+    });
+
+    describe('insert', () => {
+        let callbackList: CallbackList;
+        let h100: CallbackNode,
+            h101: CallbackNode,
+            h102: CallbackNode,
+            h103: CallbackNode,
+            h104: CallbackNode;
+
+        let reset = () => {
+            callbackList = new CallbackList();
+            h100 = callbackList.append(callbackFactory(100));
+            h101 = callbackList.append(callbackFactory(101));
+            h102 = callbackList.append(callbackFactory(102));
+            h103 = callbackList.append(callbackFactory(103));
+            h104 = callbackList.append(callbackFactory(104));
+        };
+
+        it('before front', () => {
+            reset();
+
+            callbackList.insert(callbackFactory(105), h100);
+            verifyLinkedList(callbackList, [105, 100, 101, 102, 103, 104]);
+        });
+
+        it('before second', () => {
+            reset();
+
+            callbackList.insert(callbackFactory(105), h101);
+            verifyLinkedList(callbackList, [100, 105, 101, 102, 103, 104]);
+        });
+
+        it('before nonexist', () => {
+            reset();
+
+            callbackList.insert(callbackFactory(105), null);
+            verifyLinkedList(callbackList, [100, 101, 102, 103, 104, 105]);
+        });
+    });
+
+    describe('remove', () => {
+        let callbackList: CallbackList;
+        let h100: CallbackNode,
+            h101: CallbackNode,
+            h102: CallbackNode,
+            h103: CallbackNode,
+            h104: CallbackNode;
+
+        let reset = () => {
+            callbackList = new CallbackList();
+            h100 = callbackList.append(callbackFactory(100));
+            h101 = callbackList.append(callbackFactory(101));
+            h102 = callbackList.append(callbackFactory(102));
+            h103 = callbackList.append(callbackFactory(103));
+            h104 = callbackList.append(callbackFactory(104));
+        };
+
+        it('remove front', () => {
+            reset();
+
+            callbackList.remove(h100);
+            verifyLinkedList(callbackList, [101, 102, 103, 104]);
+
+            callbackList.remove(h100);
+            verifyLinkedList(callbackList, [101, 102, 103, 104]);
+        });
+
+        it('remove second', () => {
+            reset();
+
+            callbackList.remove(h101);
+            verifyLinkedList(callbackList, [100, 102, 103, 104]);
+
+            callbackList.remove(h101);
+            verifyLinkedList(callbackList, [100, 102, 103, 104]);
+        });
+
+        it('remove end', () => {
+            reset();
+
+            callbackList.remove(h104);
+            verifyLinkedList(callbackList, [100, 101, 102, 103]);
+
+            callbackList.remove(h104);
+            verifyLinkedList(callbackList, [100, 101, 102, 103]);
+        });
+
+        it('remove nonexist', () => {
+            reset();
+
+            callbackList.remove(null);
+            verifyLinkedList(callbackList, [100, 101, 102, 103, 104]);
+
+            callbackList.remove(null);
+            verifyLinkedList(callbackList, [100, 101, 102, 103, 104]);
+        });
+
+        it('remove all', () => {
+            reset();
+
+            callbackList.remove(h102);
+            callbackList.remove(h104);
+            callbackList.remove(h103);
+            callbackList.remove(h101);
+            callbackList.remove(h100);
+            verifyLinkedList(callbackList, []);
+        });
+    });
+
+    it('has', () => {
+        let callbackList = new CallbackList();
+        let h100: CallbackNode | null = null;
+        let h101: CallbackNode | null = null;
+
+        expect(!callbackList.has(h100)).toBeTruthy();
+        expect(!callbackList.has(h101)).toBeTruthy();
+
+        h100 = callbackList.append(callbackFactory(100));
+        expect(callbackList.has(h100)).toBeTruthy();
+        expect(!callbackList.has(h101)).toBeTruthy();
+
+        h101 = callbackList.append(callbackFactory(101));
+        expect(callbackList.has(h100)).toBeTruthy();
+        expect(callbackList.has(h101)).toBeTruthy();
+
+        callbackList.remove(h100);
+        expect(!callbackList.has(h100)).toBeTruthy();
+        expect(callbackList.has(h101)).toBeTruthy();
+
+        callbackList.remove(h101);
+        expect(!callbackList.has(h100)).toBeTruthy();
+        expect(!callbackList.has(h101)).toBeTruthy();
+    });
+
+    it('hasAny', () => {
+
     });
 });

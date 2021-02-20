@@ -13,7 +13,7 @@
         "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "noUnusedLocals": true,
+        "noUnusedLocals": false,
         "noImplicitAny": false,
         "removeComments": false,
         "declaration": true,

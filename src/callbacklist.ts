@@ -23,6 +23,14 @@ export class CallbackList {
         }
     }
 
+    get head() {
+        return this._head;
+    }
+
+    get tail() {
+        return this._tail;
+    }
+
     public append(callback: Callback): CallbackNode {
         const node = new CallbackNode(callback, this._getNextCounter());
 
@@ -53,7 +61,7 @@ export class CallbackList {
         return node;
     }
 
-    public insert(callback: Callback, before: Callback | CallbackNode): CallbackNode {
+    public insert(callback: Callback, before: Callback | CallbackNode | null | undefined): CallbackNode {
         const beforeNode = this._doFindNode(before);
         if (!beforeNode) {
             return this.append(callback);
@@ -75,7 +83,7 @@ export class CallbackList {
         return node;
     }
 
-    public remove(handle: Callback | CallbackNode): boolean {
+    public remove(handle: Callback | CallbackNode | null | undefined): boolean {
         const node = this._doFindNode(handle);
         if (!node) {
             return false;
@@ -105,7 +113,7 @@ export class CallbackList {
         return !this._head;
     }
 
-    public has(handle: Callback | CallbackNode): boolean {
+    public has(handle: Callback | CallbackNode | null | undefined): boolean {
         return !!this._doFindNode(handle);
     }
 
@@ -148,14 +156,6 @@ export class CallbackList {
         this._applyDispatch(...args);
     }
 
-    public getHead() {
-        return this._head;
-    }
-
-    public getTail() {
-        return this._tail;
-    }
-
     private _getNextCounter() {
         let result = ++this._currentCounter;
         if (result === 0) {
@@ -171,7 +171,7 @@ export class CallbackList {
         return result;
     }
 
-    private _doFindNode(handle: Callback | CallbackNode) {
+    private _doFindNode(handle: Callback | CallbackNode | null | undefined) {
         let node = this._head;
         while (node) {
             if (node === handle || node.callback === handle) {

@@ -14,30 +14,30 @@ export function checkArraysEqual(a: any, b: any): boolean {
 export function verifyLinkedList(callbackList: CallbackList, dataList: number[]) {
     const count = dataList.length;
     if (count === 0) {
-        expect(!callbackList.getHead()).toBeTruthy();
-        expect(!callbackList.getTail()).toBeTruthy();
+        expect(!callbackList.head).toBeTruthy();
+        expect(!callbackList.tail).toBeTruthy();
         return;
     }
 
-    expect(!callbackList.getHead()?.previous).toBeTruthy();
-    expect(!callbackList.getTail()?.next).toBeTruthy();
+    expect(!callbackList.head?.previous).toBeTruthy();
+    expect(!callbackList.tail?.next).toBeTruthy();
 
     if (count === 1) {
-        expect(callbackList.getHead()).toBeTruthy();
-        expect(callbackList.getHead()).toEqual(callbackList.getTail());
+        expect(callbackList.head).toBeTruthy();
+        expect(callbackList.head).toEqual(callbackList.tail);
     }
 
-    let node = callbackList.getHead();
+    let node = callbackList.head;
     for (let i = 0; i < count; ++i) {
         expect(node).toBeTruthy();
 
         if (i === 0) {
             expect(!node?.previous).toBeTruthy();
-            expect(node).toEqual(callbackList.getHead());
+            expect(node).toEqual(callbackList.head);
         }
         if (i === count - 1) {
             expect(!node?.next).toBeTruthy();
-            expect(node).toEqual(callbackList.getTail());
+            expect(node).toEqual(callbackList.tail);
         }
 
         expect(node?.callback()).toEqual(dataList[i]);
@@ -47,3 +47,5 @@ export function verifyLinkedList(callbackList: CallbackList, dataList: number[])
         }
     }
 }
+
+export function callbackFactory(id: number) { return () => id; };
