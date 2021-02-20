@@ -1,4 +1,4 @@
-import { CallbackList } from "../../src";
+import { CallbackList } from "../../dist/quick-event";
 
 export function checkArraysEqual(a: any, b: any): boolean {
     if (a === b) return true;

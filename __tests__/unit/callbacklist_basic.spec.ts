@@ -1,4 +1,4 @@
-import { CallbackList, CallbackNode } from "../../src";
+import { CallbackList, CallbackNode } from "../../dist/quick-event";
 import { callbackFactory, checkArraysEqual, verifyLinkedList } from "./utils";
 
 describe('CallbackList', () => {
