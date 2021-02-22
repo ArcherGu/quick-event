@@ -2,7 +2,7 @@ import { CallbackList } from "./callbacklist";
 import { CallbackNode } from "./helper/node";
 import { SimplePropertyRetriever } from "./helper/object";
 import { MixinFilter } from "./mixins/mixinfilter";
-import { ArgumentPassingMode, Callback, EventjsParams } from "./types";
+import { ArgumentPassingMode, Callback, QuickEventParams } from "./types";
 
 function _extend(destination: EventDispatcher, source: MixinFilter) {
     const allSourceProperty = SimplePropertyRetriever.getOwnAndPrototypeEnumerablesAndNonenumerables(source);
@@ -45,12 +45,12 @@ export class EventDispatcher {
     static readonly defaultArgumentPassingMode: ArgumentPassingMode = 2;
 
     private _eventCallbackListMap: { [key: string]: CallbackList;[key: number]: CallbackList; } = {};
-    private _params: EventjsParams;
+    private _params: QuickEventParams;
     private _getEvent: ((...args: any[]) => any) | null;
     private _argumentPassingMode: ArgumentPassingMode;
-    private _argumentsAsArray: boolean;
+    protected _argumentsAsArray: boolean;
     private _mixins: MixinFilter[];
-    constructor(params?: EventjsParams) {
+    constructor(params?: QuickEventParams) {
         params = params || {};
         this._params = params;
         this._getEvent = typeof params.getEvent === 'function' ? params.getEvent : null;

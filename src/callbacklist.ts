@@ -1,5 +1,5 @@
 import { CallbackNode } from './helper/node';
-import { Callback, EventjsParams, Filter } from './types';
+import { Callback, QuickEventParams, Filter } from './types';
 
 export class CallbackList {
     private _head: CallbackNode | null = null;
@@ -10,7 +10,7 @@ export class CallbackList {
     private _dispatch: (...args: any[]) => any;
     private _applyDispatch: (...args: any[]) => any;
 
-    constructor(params?: EventjsParams) {
+    constructor(params?: QuickEventParams) {
         params = params || {};
         this._canContinueInvoking = params.hasOwnProperty('canContinueInvoking') ? params.canContinueInvoking : null;
         this._argumentsAsArray = params.hasOwnProperty('argumentsAsArray') ? !!params.argumentsAsArray : false;

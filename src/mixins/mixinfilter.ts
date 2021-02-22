@@ -1,10 +1,10 @@
 import { CallbackNode } from '../helper/node';
 import { CallbackList } from '../callbacklist';
-import { EventjsParams, Filter } from '../types';
+import { QuickEventParams, Filter } from '../types';
 
 export class MixinFilter {
     public filterList: CallbackList;
-    constructor(params?: EventjsParams) {
+    constructor(params?: QuickEventParams) {
         this.filterList = new CallbackList(params);
     }
 

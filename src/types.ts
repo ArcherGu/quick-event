@@ -2,7 +2,7 @@ import { MixinFilter } from './mixins/mixinfilter';
 
 export type ArgumentPassingMode = 1 | 2;
 
-export interface EventjsParams {
+export interface QuickEventParams {
     getEvent?: (...args: any[]) => any;
     canContinueInvoking?: (...args: any[]) => boolean;
     argumentPassingMode?: ArgumentPassingMode;
