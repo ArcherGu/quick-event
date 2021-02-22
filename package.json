@@ -6,7 +6,7 @@
     "source": "src/index.ts",
     "scripts": {
         "build": "rimraf dist && rollup -c",
-        "test": "jest"
+        "test": "jest --verbose"
     },
     "keywords": [
         "quick-event",
