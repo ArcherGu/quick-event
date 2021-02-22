@@ -1,14 +1,18 @@
 import { CallbackList } from "./callbacklist";
 import { CallbackNode } from "./helper/node";
+import { SimplePropertyRetriever } from "./helper/object";
 import { MixinFilter } from "./mixins/mixinfilter";
 import { ArgumentPassingMode, Callback, EventjsParams } from "./types";
 
 function _extend(destination: EventDispatcher, source: MixinFilter) {
-    for (const k in source) {
-        if (source.hasOwnProperty(k)) {
-            destination[k] = source[k];
-        }
+    const allSourceProperty = SimplePropertyRetriever.getOwnAndPrototypeEnumerablesAndNonenumerables(source);
+    const allObjectProperty = SimplePropertyRetriever.getOwnAndPrototypeEnumerablesAndNonenumerables(new Object());
+    const customSourceProperty = allSourceProperty.filter((val) => allObjectProperty.indexOf(val) === -1);
+
+    for (const k of customSourceProperty) {
+        destination[k] = source[k];
     }
+
     return destination;
 }
 
