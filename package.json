@@ -7,7 +7,7 @@
     "scripts": {
         "build": "rimraf dist && rollup -c",
         "test": "jest --verbose",
-        "doc": "typedoc --out docs src"
+        "doc": "typedoc --options ./typedoc.json"
     },
     "keywords": [
         "quick-event",

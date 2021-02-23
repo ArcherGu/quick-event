@@ -1,4 +1,4 @@
-import { CallbackNode } from './helper/callback_node';
+import { CallbackNode } from './callback_node';
 import { Callback, QuickEventParams, Filter } from './types';
 
 /**
