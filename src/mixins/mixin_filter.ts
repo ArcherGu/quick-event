@@ -1,5 +1,5 @@
-import { CallbackNode } from '../helper/node';
-import { CallbackList } from '../callbacklist';
+import { CallbackNode } from '../helper/callback_node';
+import { CallbackList } from '../callback_list';
 import { QuickEventParams, Filter } from '../types';
 
 export class MixinFilter {

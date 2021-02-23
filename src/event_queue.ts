@@ -1,4 +1,4 @@
-import { EventDispatcher } from "./eventdispatcher";
+import { EventDispatcher } from "./event_dispatcher";
 import { QuickEventParams } from "./types";
 
 export class EventQueue extends EventDispatcher {
@@ -35,7 +35,7 @@ export class EventQueue extends EventDispatcher {
 
         for (const item of list) {
             let ok: boolean = false;
-            if (this._argumentsAsArray) {
+            if (this.argumentsAsArray) {
                 ok = func.call(this, item);
             }
             else {

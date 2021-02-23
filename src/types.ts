@@ -1,4 +1,4 @@
-import { MixinFilter } from './mixins/mixinfilter';
+import { MixinFilter } from './mixins/mixin_filter';
 
 export type ArgumentPassingMode = 1 | 2;
 

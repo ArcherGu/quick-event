@@ -1,6 +1,12 @@
-import { CallbackNode } from './helper/node';
+import { CallbackNode } from './helper/callback_node';
 import { Callback, QuickEventParams, Filter } from './types';
 
+/**
+ *
+ *
+ * @export
+ * @class CallbackList
+ */
 export class CallbackList {
     private _head: CallbackNode | null = null;
     private _tail: CallbackNode | null = null;

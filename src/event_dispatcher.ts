@@ -1,7 +1,7 @@
-import { CallbackList } from "./callbacklist";
-import { CallbackNode } from "./helper/node";
+import { CallbackList } from "./callback_list";
+import { CallbackNode } from "./helper/callback_node";
 import { SimplePropertyRetriever } from "./helper/object";
-import { MixinFilter } from "./mixins/mixinfilter";
+import { MixinFilter } from "./mixins/mixin_filter";
 import { ArgumentPassingMode, Callback, QuickEventParams } from "./types";
 
 function _extend(destination: EventDispatcher, source: MixinFilter) {
@@ -44,18 +44,19 @@ export class EventDispatcher {
      */
     static readonly defaultArgumentPassingMode: ArgumentPassingMode = 2;
 
+    protected argumentsAsArray: boolean;
     private _eventCallbackListMap: { [key: string]: CallbackList;[key: number]: CallbackList; } = {};
     private _params: QuickEventParams;
     private _getEvent: ((...args: any[]) => any) | null;
     private _argumentPassingMode: ArgumentPassingMode;
-    protected _argumentsAsArray: boolean;
     private _mixins: MixinFilter[];
+
     constructor(params?: QuickEventParams) {
         params = params || {};
         this._params = params;
         this._getEvent = typeof params.getEvent === 'function' ? params.getEvent : null;
         this._argumentPassingMode = params.argumentPassingMode ? params.argumentPassingMode : EventDispatcher.defaultArgumentPassingMode;
-        this._argumentsAsArray = params.argumentsAsArray ? !!params.argumentsAsArray : false;
+        this.argumentsAsArray = params.argumentsAsArray ? !!params.argumentsAsArray : false;
 
         this._mixins = params.mixins ? params.mixins : [];
         for (const mixin of this._mixins) {
@@ -115,7 +116,7 @@ export class EventDispatcher {
 
         if (this._getEvent) {
             let event: any;
-            if (this._argumentsAsArray) {
+            if (this.argumentsAsArray) {
                 event = this._getEvent.call(this, args);
             }
             else {
