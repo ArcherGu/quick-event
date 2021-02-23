@@ -1,6 +1,9 @@
 import { MixinFilter } from './mixins/mixin_filter';
 
-export type ArgumentPassingMode = 1 | 2;
+export enum ArgumentPassingMode {
+    IncludeEvent = 1,
+    ExcludeEvent
+}
 
 export interface QuickEventParams {
     getEvent?: (...args: any[]) => any;

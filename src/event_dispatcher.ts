@@ -16,33 +16,41 @@ function _extend(destination: EventDispatcher, source: MixinFilter) {
     return destination;
 }
 
+/**
+ * EventDispatcher is something like a map between the `EventType` and `CallbackList`.
+ *
+ * EventDispatcher holds a map of `<EventType, CallbackList>` pairs. On dispatching, EventDispatcher finds the CallbackList of the event type, then invoke the callback list. The invocation is always synchronous. The listeners are triggered when [EventDispatcher.dispatch](event_dispatcher.eventdispatcher.html#dispatch) is called.
+ *
+ * ## Nested listener safety
+ * 1. If a listener adds another listener of the same event to the dispatcher during a dispatching, the new listener is guaranteed not to be triggered within the same dispatching. This is guaranteed by an unsigned 64 bits integer counter. This rule will be broken is the counter is overflowed to zero in a dispatching, but this rule will continue working on the subsequence dispatching.<br/>
+ * 2. Any listeners that are removed during a dispatching are guaranteed not triggered.
+ * @export
+ * @class EventDispatcher
+ */
 export class EventDispatcher {
     /**
-     * ArgumentPassingMode: 1
+     * ArgumentPassingMode: IncludeEvent
      * @static
      * @readonly
-     * @type {ArgumentPassingMode}
      * @memberof EventDispatcher
      */
-    static readonly argumentPassingIncludeEvent: ArgumentPassingMode = 1;
+    static readonly argumentPassingIncludeEvent: ArgumentPassingMode = ArgumentPassingMode.IncludeEvent;
 
     /**
-     * ArgumentPassingMode: 2
+     * ArgumentPassingMode: ExcludeEvent
      * @static
      * @readonly
-     * @type {ArgumentPassingMode}
      * @memberof EventDispatcher
      */
-    static readonly argumentPassingExcludeEvent: ArgumentPassingMode = 2;
+    static readonly argumentPassingExcludeEvent: ArgumentPassingMode = ArgumentPassingMode.ExcludeEvent;
 
     /**
-     * ArgumentPassingMode: 2
+     * ArgumentPassingMode: ExcludeEvent
      * @static
      * @readonly
-     * @type {ArgumentPassingMode}
      * @memberof EventDispatcher
      */
-    static readonly defaultArgumentPassingMode: ArgumentPassingMode = 2;
+    static readonly defaultArgumentPassingMode: ArgumentPassingMode = ArgumentPassingMode.ExcludeEvent;
 
     protected argumentsAsArray: boolean;
     private _eventCallbackListMap: { [key: string]: CallbackList;[key: number]: CallbackList; } = {};
@@ -64,18 +72,67 @@ export class EventDispatcher {
         }
     }
 
+    /**
+     * Add the *callback* to the dispatcher to listen to *event*.<br/>
+     * The listener is added to the end of the listener list.<br/>
+     * Return a handle object which represents the listener. The handle can be used to remove this listener or insert other listener before this listener.<br/>
+     * If `appendListener` is called in another listener during a dispatching, the new listener is guaranteed not triggered during the same dispatching.<br/>
+     * If the same callback is added twice, it results duplicated listeners.<br/>
+     * The time complexity is O(1).
+     *
+     * @param {(string | number)} event
+     * @param {Callback} callback
+     * @returns {CallbackNode}
+     * @memberof EventDispatcher
+     */
     public appendListener(event: string | number, callback: Callback): CallbackNode {
         return this._doGetCallbackList(event, true)!.append(callback);
     }
 
+    /**
+     * Add the *callback* to the dispatcher to listen to *event*.<br/>
+     * The listener is added to the beginning of the listener list.<br/>
+     * Return a handle object which represents the listener. The handle can be used to remove this listener or insert other listener before this listener.<br/>
+     * If `prependListener` is called in another listener during a dispatching, the new listener is guaranteed not triggered during the same dispatching.<br/>
+     * The time complexity is O(1).
+     *
+     * @param {(string | number)} event
+     * @param {Callback} callback
+     * @returns {CallbackNode}
+     * @memberof EventDispatcher
+     */
     public prependListener(event: string | number, callback: Callback): CallbackNode {
         return this._doGetCallbackList(event, true)!.prepend(callback);
     }
 
+    /**
+     * Insert the *callback* to the dispatcher to listen to *event* before the listener handle *before*. If *before* is not found, *callback* is added at the end of the listener list.<br/>
+     * *before* can be a callback function, or a handle object.<br/>
+     * Return a handle object which represents the listener. The handle can be used to remove this listener or insert other listener before this listener.<br/>
+     * If `insertListener` is called in another listener during a dispatching, the new listener is guaranteed not triggered during the same dispatching.<br/>
+     * The time complexity is O(1).
+     *
+     * @param {(string | number)} event
+     * @param {Callback} callback
+     * @param {(Callback | CallbackNode | null | undefined)} before
+     * @returns {CallbackNode}
+     * @memberof EventDispatcher
+     */
     public insertListener(event: string | number, callback: Callback, before: Callback | CallbackNode | null | undefined): CallbackNode {
         return this._doGetCallbackList(event, true)!.insert(callback, before);
     }
 
+    /**
+     * Remove the listener *callback* which listens to *event* from the dispatcher.<br/>
+     * *callback* can be a callback function, or a handle object.<br/>
+     * Return true if the listener is removed successfully, false if the listener is not found.<br/>
+     * The time complexity is O(1).
+     *
+     * @param {(string | number)} event
+     * @param {(Callback | CallbackNode | null | undefined)} handle
+     * @returns {boolean}
+     * @memberof EventDispatcher
+     */
     public removeListener(event: string | number, handle: Callback | CallbackNode | null | undefined): boolean {
         const cbList = this._doGetCallbackList(event, false);
         if (cbList) {
@@ -85,6 +142,15 @@ export class EventDispatcher {
         return false;
     }
 
+    /**
+     * Return true if the dispatcher contains *callback*.<br/>
+     * *callback* can be a callback function, or a handle object.
+     *
+     * @param {(string | number)} event
+     * @param {(Callback | CallbackNode | null | undefined)} handle
+     * @returns {boolean}
+     * @memberof EventDispatcher
+     */
     public hasListener(event: string | number, handle: Callback | CallbackNode | null | undefined): boolean {
         const cbList = this._doGetCallbackList(event, false);
         if (cbList) {
@@ -94,6 +160,13 @@ export class EventDispatcher {
         return false;
     }
 
+    /**
+     * Return true if the dispatcher contains any callback.
+     *
+     * @param {(string | number)} event
+     * @returns {boolean}
+     * @memberof EventDispatcher
+     */
     public hasAnyListener(event: string | number): boolean {
         const cbList = this._doGetCallbackList(event, false);
         if (cbList) {
@@ -103,10 +176,26 @@ export class EventDispatcher {
         return false;
     }
 
+    /**
+     * Dispatch an event.<br/>
+     * The listeners are called with arguments `arg1`, `arg2`, etc.
+     *
+     * @param {...any[]} args
+     * @memberof EventDispatcher
+     */
     public dispatch(...args: any[]) {
         this.applyDispatch(args);
     }
 
+    /**
+     * Dispatch an event.<br/>
+     * The listeners are called with arguments `arg1`, `arg2`, etc.<br/>
+     * Note the arguments are passed in an array, similar to Function.prototype.apply.
+     *
+     * @param {any[]} args
+     * @returns
+     * @memberof EventDispatcher
+     */
     public applyDispatch(args: any[]) {
         for (const mixin of this._mixins) {
             if (mixin.mixinBeforeDispatch && !mixin.mixinBeforeDispatch.call(this, args)) {
@@ -142,6 +231,15 @@ export class EventDispatcher {
         }
     }
 
+    /**
+     * Apply `func` to all listeners of `event`.<br/>
+     * The `func` receives one parameter which is the callback.<br/>
+     * **Note**: the `func` can remove any listeners, or add other listeners, safely.
+     *
+     * @param {(string | number)} event
+     * @param {(callback: Callback) => any} func
+     * @memberof EventDispatcher
+     */
     public forEach(event: string | number, func: (callback: Callback) => any) {
         const cbList = this._doGetCallbackList(event, false);
         if (cbList) {
@@ -149,6 +247,15 @@ export class EventDispatcher {
         }
     }
 
+    /**
+     * Apply `func` to all listeners of `event`. `func` must return a boolean value, and if the return value is false, forEachIf stops the looping immediately.<br/>
+     * Return `true` if all listeners are invoked, or `event` is not found, `false` if `func` returns `false`.
+     *
+     * @param {(string | number)} event
+     * @param {(callback: Callback) => any} func
+     * @returns {boolean}
+     * @memberof EventDispatcher
+     */
     public forEachIf(event: string | number, func: (callback: Callback) => any): boolean {
         const cbList = this._doGetCallbackList(event, false);
         if (cbList) {
