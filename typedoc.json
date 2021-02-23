@@ -1,4 +1,6 @@
 {
     "entryPoints": "./src",
+    "exclude": "./src/helper/*.ts",
+    "excludePrivate": true,
     "out": "docs"
 }
