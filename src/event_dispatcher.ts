@@ -19,7 +19,7 @@ function _extend(destination: EventDispatcher, source: MixinFilter) {
 /**
  * EventDispatcher is something like a map between the `EventType` and `CallbackList`.
  *
- * EventDispatcher holds a map of `<EventType, CallbackList>` pairs. On dispatching, EventDispatcher finds the CallbackList of the event type, then invoke the callback list. The invocation is always synchronous. The listeners are triggered when [EventDispatcher.dispatch](event_dispatcher.eventdispatcher.html#dispatch) is called.
+ * EventDispatcher holds a map of `<EventType, CallbackList>` pairs. On dispatching, EventDispatcher finds the CallbackList of the event type, then invoke the callback list. The invocation is always synchronous. The listeners are triggered when [EventDispatcher.dispatch](https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html#dispatch) is called.
  *
  * ## Nested listener safety
  * 1. If a listener adds another listener of the same event to the dispatcher during a dispatching, the new listener is guaranteed not to be triggered within the same dispatching. This is guaranteed by an unsigned 64 bits integer counter. This rule will be broken is the counter is overflowed to zero in a dispatching, but this rule will continue working on the subsequence dispatching.<br/>

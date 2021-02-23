@@ -1,0 +1,434 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>QuickEventParams | quick-event</title>
+	<meta name="description" content="Documentation for quick-event">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">quick-event</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">quick-event</a>
+				</li>
+				<li>
+					<a href="quickeventparams.html">QuickEventParams</a>
+				</li>
+			</ul>
+			<h1>Interface QuickEventParams</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>All classes <a href="https://archergu.github.io/quick-event/classes/callback_list.callbacklist.html">CallbackList</a>, <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a> and <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html">EventQueue</a> in quick-event accepts a parameters object in constructor to configure and extend each components&#39; behavior. The parameters object is <code>undefined</code> by default.<br/>
+							All parameters are optional. If any parameter is omitted, the default value is used.<br/>
+						The same parameter mechanism applies to all three classes, <a href="https://archergu.github.io/quick-event/classes/callback_list.callbacklist.html">CallbackList</a>, <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a> and <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html">EventQueue</a>, though not all classes requires the same parameter.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>QuickEventParams</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">QuickEventParams</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="quickeventparams.html#argumentpassingmode" class="tsd-kind-icon">argument<wbr>Passing<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="quickeventparams.html#argumentsasarray" class="tsd-kind-icon">arguments<wbr>AsArray</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="quickeventparams.html#cancontinueinvoking" class="tsd-kind-icon">can<wbr>Continue<wbr>Invoking</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="quickeventparams.html#getevent" class="tsd-kind-icon">get<wbr>Event</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="quickeventparams.html#mixins" class="tsd-kind-icon">mixins</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="argumentpassingmode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> argument<wbr>Passing<wbr>Mode</h3>
+					<div class="tsd-signature tsd-kind-icon">argument<wbr>Passing<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../enums/argumentpassingmode.html#includeevent" class="tsd-signature-type" data-tsd-kind="Enumeration member">IncludeEvent</a><span class="tsd-signature-symbol"> | </span><a href="../enums/argumentpassingmode.html#excludeevent" class="tsd-signature-type" data-tsd-kind="Enumeration member">ExcludeEvent</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/types.ts#L130">types.ts:130</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>ArgumentPassingMode</code> is the argument passing mode.</p>
+						</div>
+						<p>The possible values,</p>
+						<pre><code class="language-ts"><span style="color: #001080">EventDispatcher</span><span style="color: #000000">.</span><span style="color: #001080">argumentPassingIncludeEvent</span><span style="color: #000000"> = </span><span style="color: #001080">ArgumentPassingMode</span><span style="color: #000000">.</span><span style="color: #001080">IncludeEvent</span><span style="color: #000000">;</span>
+<span style="color: #001080">EventDispatcher</span><span style="color: #000000">.</span><span style="color: #001080">argumentPassingExcludeEvent</span><span style="color: #000000"> = </span><span style="color: #001080">ArgumentPassingMode</span><span style="color: #000000">.</span><span style="color: #001080">ExcludeEvent</span><span style="color: #000000">;</span>
+</code></pre>
+						<p>The global default value,</p>
+						<pre><code class="language-ts"><span style="color: #001080">EventDispatcher</span><span style="color: #000000">.</span><span style="color: #001080">defaultArgumentPassingMode</span><span style="color: #000000"> = </span><span style="color: #001080">ArgumentPassingMode</span><span style="color: #000000">.</span><span style="color: #001080">ExcludeEvent</span><span style="color: #000000">;</span>
+</code></pre>
+						<p>Let&#39;s see some examples. Assume we have the dispatcher</p>
+						<pre><code class="language-ts"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">();</span>
+<span style="color: #008000">// same as</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">({ </span><span style="color: #001080">argumentPassingMode:</span><span style="color: #000000"> </span><span style="color: #001080">EventDispatcher</span><span style="color: #000000">.</span><span style="color: #001080">argumentPassingExcludeEvent</span><span style="color: #000000"> });</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;hello&quot;</span><span style="color: #000000">);</span>
+</code></pre>
+						<p>The listener will be invoked with the argument <code>(&quot;hello&quot;)</code>, the event type is omitted since it&#39;s argumentPassingExcludeEvent.</p>
+						<dl class="tsd-comment-tags">
+							<dt>apply</dt>
+							<dd><p><a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a>, <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html">EventQueue</a></p>
+							</dd>
+							<dt>default</dt>
+							<dd><p>EventDispatcher.argumentPassingExcludeEvent</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>QuickEventParams</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="argumentsasarray" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> arguments<wbr>AsArray</h3>
+					<div class="tsd-signature tsd-kind-icon">arguments<wbr>AsArray<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/types.ts#L161">types.ts:161</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>argumentsAsArray</code> affects how the listeners and <code>getEvent</code> receive the arguments.</p>
+						</div>
+						<p>When <code>argumentsAsArray</code> is false, the listeners and <code>getEvent</code> receive the arguments as individual parameters. For example,</p>
+						<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">();</span>
+<span style="color: #008000">// same as</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">({ </span><span style="color: #001080">argumentsAsArray:</span><span style="color: #000000"> </span><span style="color: #0000FF">false</span><span style="color: #000000"> });</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">(</span><span style="color: #001080">a</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">, </span><span style="color: #001080">c</span><span style="color: #000000">);</span>
+<span style="color: #008000">// The listener will be called as</span>
+<span style="color: #795E26">myListener</span><span style="color: #000000">(</span><span style="color: #001080">a</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">, </span><span style="color: #001080">c</span><span style="color: #000000">);</span>
+</code></pre>
+						<p>When <code>argumentsAsArray</code> is true, the listeners and <code>getEvent</code> receive the arguments as an array of which each elements are the arguments. For example,</p>
+						<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">({ </span><span style="color: #001080">argumentsAsArray:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000"> });</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">(</span><span style="color: #001080">a</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">, </span><span style="color: #001080">c</span><span style="color: #000000">);</span>
+<span style="color: #008000">// The listener will be called as</span>
+<span style="color: #795E26">myListener</span><span style="color: #000000">([ </span><span style="color: #001080">a</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">, </span><span style="color: #001080">c</span><span style="color: #000000"> ]);</span>
+</code></pre>
+						<p>Setting <code>argumentsAsArray</code> to true will slightly improve the performance.</p>
+						<dl class="tsd-comment-tags">
+							<dt>apply</dt>
+							<dd><p><a href="https://archergu.github.io/quick-event/classes/callback_list.callbacklist.html">CallbackList</a>, <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a>, <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html">EventQueue</a></p>
+							</dd>
+							<dt>default</dt>
+							<dd><p>false</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>QuickEventParams</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="cancontinueinvoking" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> can<wbr>Continue<wbr>Invoking</h3>
+					<div class="tsd-signature tsd-kind-icon">can<wbr>Continue<wbr>Invoking<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/types.ts#L98">types.ts:98</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><code>canContinueInvoking(arg1, arg2, ...)</code>. The function receives same arguments as <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html#dispatch">EventDispatcher.dispatch</a> and <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html#enqueue">EventQueue.enqueue</a>, and must return true if the event dispatching or callback list invoking can continue, false if the dispatching should stop.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>apply</dt>
+							<dd><p><a href="https://archergu.github.io/quick-event/classes/callback_list.callbacklist.html">CallbackList</a>, <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a>, <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html">EventQueue</a></p>
+							</dd>
+							<dt>default</dt>
+							<dd><p>the default implementation always returns true</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>QuickEventParams</p>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-javascript"><span style="color: #008000">// The event object we will dispatch looks like,</span>
+<span style="color: #008000">// MyEvent = {</span>
+<span style="color: #008000">//   type: int,</span>
+<span style="color: #008000">//   canceled: boolean</span>
+<span style="color: #008000">//};</span>
+
+<span style="color: #008000">// When construct the dispatcher, pass the parameter</span>
+<span style="color: #008000">// getEvent to indicate how to get the event type.</span>
+<span style="color: #008000">// Parameter canContinueInvoking checks if the dispatching can continue.</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #795E26">getEvent</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #001080">e</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">e</span><span style="color: #000000">.</span><span style="color: #001080">type</span><span style="color: #000000">,</span>
+
+<span style="color: #000000">  </span><span style="color: #795E26">canContinueInvoking</span><span style="color: #001080">:</span><span style="color: #000000"> (</span><span style="color: #001080">e</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> ! </span><span style="color: #001080">e</span><span style="color: #000000">.</span><span style="color: #001080">canceled</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, (</span><span style="color: #001080">e</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Got event 3&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">e</span><span style="color: #000000">.</span><span style="color: #001080">canceled</span><span style="color: #000000"> = </span><span style="color: #0000FF">true</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, (</span><span style="color: #001080">e</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Should not get this event 3&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Dispatch the event.</span>
+<span style="color: #008000">// The first argument is MyEvent.</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">({ </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #001080">canceled:</span><span style="color: #000000"> </span><span style="color: #0000FF">false</span><span style="color: #000000"> });</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="getevent" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> get<wbr>Event</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/types.ts#L61">types.ts:61</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The function receives same arguments as <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html#dispatch">EventDispatcher.dispatch</a> and <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html#enqueue">EventQueue.enqueue</a>, and must return an event type.<br/>
+							quick-event forwards all arguments of <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html#dispatch">EventDispatcher.dispatch</a> and <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html#enqueue">EventQueue.enqueue</a> (both has same arguments) to getEvent to get the event type, then invokes the callback list of the event type.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>apply</dt>
+							<dd><p><a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a>, <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html">EventQueue</a></p>
+							</dd>
+							<dt>default</dt>
+							<dd><p>the default implementation returns the first argument of <code>getEvent</code></p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>QuickEventParams</p>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-javascript"><span style="color: #008000">// The event object we will dispatch looks like,</span>
+<span style="color: #008000">// MyEvent = {</span>
+<span style="color: #008000">//   type: int,</span>
+<span style="color: #008000">//   message: string,</span>
+<span style="color: #008000">//   param: int</span>
+<span style="color: #008000">//};</span>
+
+<span style="color: #008000">// When construct the dispatcher, pass the parameter</span>
+<span style="color: #008000">// getEvent to indicate how to get the event type.</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #795E26">getEvent</span><span style="color: #001080">:</span><span style="color: #000000"> (</span><span style="color: #001080">e</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">e</span><span style="color: #000000">.</span><span style="color: #001080">type</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Add a listener.</span>
+<span style="color: #008000">// Note: the first argument is the event type of type int (same as the return type of getEvent), not MyEvent.</span>
+<span style="color: #008000">// e is the main event object.</span>
+<span style="color: #008000">// b is an extra parameter.</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, (</span><span style="color: #001080">e</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Got event 3&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Event::type is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">e</span><span style="color: #000000">.</span><span style="color: #001080">type</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Event::message is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">e</span><span style="color: #000000">.</span><span style="color: #001080">message</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Event::param is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">e</span><span style="color: #000000">.</span><span style="color: #001080">param</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;b is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">b</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Dispatch the event.</span>
+<span style="color: #008000">// The first argument is MyEvent.</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">({ </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #001080">message:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Hello world&quot;</span><span style="color: #000000">, </span><span style="color: #001080">param:</span><span style="color: #000000"> </span><span style="color: #098658">38</span><span style="color: #000000"> }, </span><span style="color: #0000FF">true</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// Output:</span>
+<span style="color: #008000">// &gt; Got event 3</span>
+<span style="color: #008000">// &gt; Event::type is 3</span>
+<span style="color: #008000">// &gt; Event::message is Hello world</span>
+<span style="color: #008000">// &gt; Event::param is 38</span>
+<span style="color: #008000">// &gt; b is true</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="mixins" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mixins</h3>
+					<div class="tsd-signature tsd-kind-icon">mixins<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../classes/mixinfilter.html" class="tsd-signature-type" data-tsd-kind="Class">MixinFilter</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/types.ts#L171">types.ts:171</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A mixin is used to inject code in the EventDispatcher/EventQueue inheritance hierarchy to extend the functionalities. For more details, please read the <a href="">document of mixins</a>.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>apply</dt>
+							<dd><p><a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a>, <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html">EventQueue</a></p>
+							</dd>
+							<dt>default</dt>
+							<dd><p>undefined</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>QuickEventParams</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="../enums/argumentpassingmode.html" class="tsd-kind-icon">Argument<wbr>Passing<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/callbacklist.html" class="tsd-kind-icon">Callback<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/callbacknode.html" class="tsd-kind-icon">Callback<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/eventdispatcher.html" class="tsd-kind-icon">Event<wbr>Dispatcher</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/eventqueue.html" class="tsd-kind-icon">Event<wbr>Queue</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/mixinfilter.html" class="tsd-kind-icon">Mixin<wbr>Filter</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="quickeventparams.html" class="tsd-kind-icon">Quick<wbr>Event<wbr>Params</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="quickeventparams.html#argumentpassingmode" class="tsd-kind-icon">argument<wbr>Passing<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="quickeventparams.html#argumentsasarray" class="tsd-kind-icon">arguments<wbr>AsArray</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="quickeventparams.html#cancontinueinvoking" class="tsd-kind-icon">can<wbr>Continue<wbr>Invoking</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="quickeventparams.html#getevent" class="tsd-kind-icon">get<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="quickeventparams.html#mixins" class="tsd-kind-icon">mixins</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#callback" class="tsd-kind-icon">Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#filter" class="tsd-kind-icon">Filter</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

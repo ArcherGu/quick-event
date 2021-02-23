@@ -2,7 +2,7 @@ import { CallbackNode } from './callback_node';
 import { Callback, QuickEventParams, Filter } from './types';
 
 /**
- * CallbackList is the fundamental class in quick-event. The other classes [EventDispatcher](event_dispatcher.eventdispatcher.html) and [EventQueue](event_queue.eventqueue.html) are built on CallbackList.
+ * CallbackList is the fundamental class in quick-event. The other classes [EventDispatcher](https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html) and [EventQueue](https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html) are built on CallbackList.
  *
  * CallbackList holds a list of callbacks. At the time of the call, CallbackList simply invokes each callback one by one. Consider CallbackList as the signal/slot system in Qt, or the callback function pointer in some Windows APIs (such as lpCompletionRoutine in ReadFileEx).
  * The *callback* can be any functions.
@@ -10,7 +10,6 @@ import { Callback, QuickEventParams, Filter } from './types';
  * ## Nested callback safety
  * 1. If a callback adds another callback to the callback list during a invoking, the new callback is guaranteed not to be triggered within the same invoking. This is guaranteed by an integer counter. This rule will be broken is the counter is overflowed to zero in a invoking, but this rule will continue working on the subsequence invoking.<br/>
  * 2. Any callbacks that are removed during a invoking are guaranteed not triggered.<br/>
- * 
  * 
  * @export
  * @class CallbackList
@@ -38,7 +37,7 @@ export class CallbackList {
     }
 
     /**
-     * The first [CallbackNode](callback_node.callbacknode.html)
+     * The first [CallbackNode](https://archergu.github.io/quick-event/classes/callback_node.callbacknode.html)
      *
      * @readonly
      * @memberof CallbackList
@@ -48,7 +47,7 @@ export class CallbackList {
     }
 
     /**
-     * The last [CallbackNode](callback_node.callbacknode.html)
+     * The last [CallbackNode](https://archergu.github.io/quick-event/classes/callback_node.callbacknode.html)
      *
      * @readonly
      * @memberof CallbackList

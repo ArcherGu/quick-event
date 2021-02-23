@@ -1,0 +1,405 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MixinFilter | quick-event</title>
+	<meta name="description" content="Documentation for quick-event">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">quick-event</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">quick-event</a>
+				</li>
+				<li>
+					<a href="mixinfilter.html">MixinFilter</a>
+				</li>
+			</ul>
+			<h1>Class MixinFilter</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>MixinFilter allows all events are filtered or modified before dispatching.</p>
+					</div>
+					<p><code>MixinFilter.appendFilter(filter)</code> adds an event filter to the dispatcher. The <code>filter</code> receives an array same as mixinBeforeDispatch receives.</p>
+					<p>The event filters are invoked for all events, and invoked before any listeners are invoked.
+					The event filters can modify the arguments since the arguments are passed in the array.</p>
+					<p>Event filter is a powerful and useful technology, below is some sample use cases, though the real world use cases are unlimited.</p>
+					<p>1, Capture and block all interested events. For example, in a GUI window system, all windows can receive mouse events. However, when a window is under mouse dragging, only the window under dragging should receive the mouse events even when the mouse is moving on other window. So when the dragging starts, the window can add a filter. The filter redirects all mouse events to the window and prevent other listeners from the mouse events, and bypass all other events.</p>
+					<p>2, Setup catch-all event listener. For example, in a phone book system, the system sends events based on the actions, such as adding a phone number, remove a phone number, look up a phone number, etc. A module may be only interested in special area code of a phone number, not the actions. One approach is the module can listen to all possible events (add, remove, look up), but this is very fragile -- how about a new action event is added and the module forgets to listen on it? The better approach is the module add a filter and check the area code in the filter.</p>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">mixins:</span><span style="color: #000000"> [ </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">MixinFilter</span><span style="color: #000000">() ],</span>
+<span style="color: #000000">  </span><span style="color: #001080">argumentPassingMode:</span><span style="color: #000000"> </span><span style="color: #001080">EventDispatcher</span><span style="color: #000000">.</span><span style="color: #001080">argumentPassingIncludeEvent</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, (</span><span style="color: #001080">e</span><span style="color: #000000">, </span><span style="color: #001080">i</span><span style="color: #000000">, </span><span style="color: #001080">s</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Got event 3, i was 1 but actural is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">i</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;s was Hello but actural is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">s</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Shout not got event 5&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Add three event filters.</span>
+
+<span style="color: #008000">// The first filter modifies the input arguments to other values, then the subsequence filters</span>
+<span style="color: #008000">// and listeners will see the modified values.</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendFilter</span><span style="color: #000000">((</span><span style="color: #001080">args</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Filter 1, e is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">], </span><span style="color: #A31515">&quot;passed in i is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">], </span><span style="color: #A31515">&quot;s is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">]);</span>
+<span style="color: #000000">  </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">] = </span><span style="color: #098658">38</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">] = </span><span style="color: #A31515">&quot;Hi&quot;</span><span style="color: #000000">;</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Filter 1, changed i is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">], </span><span style="color: #A31515">&quot;s is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">]);</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// The second filter filters out all event of 5. So no listeners on event 5 can be triggered.</span>
+<span style="color: #008000">// The third filter is not invoked on event 5 also.</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendFilter</span><span style="color: #000000">((</span><span style="color: #001080">args</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Filter 2, e is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">], </span><span style="color: #A31515">&quot;passed in i is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">], </span><span style="color: #A31515">&quot;s is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">]);</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">] === </span><span style="color: #098658">5</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #0000FF">false</span><span style="color: #000000">;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// The third filter just prints the input arguments.</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendFilter</span><span style="color: #000000">((</span><span style="color: #001080">args</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Filter 3, e is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">], </span><span style="color: #A31515">&quot;passed in i is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">], </span><span style="color: #A31515">&quot;s is&quot;</span><span style="color: #000000">, </span><span style="color: #001080">args</span><span style="color: #000000">[</span><span style="color: #098658">2</span><span style="color: #000000">]);</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">;</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Dispatch the events, the first argument is always the event type.</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;Hello&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">, </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;World&quot;</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// Output</span>
+<span style="color: #008000">// &gt; Filter 1, e is 3 passed in i is 1 s is Hello</span>
+<span style="color: #008000">// &gt; Filter 1, changed i is 38 s is Hi</span>
+<span style="color: #008000">// &gt; Filter 2, e is 3 passed in i is 38 s is Hi</span>
+<span style="color: #008000">// &gt; Filter 3, e is 3 passed in i is 38 s is Hi</span>
+<span style="color: #008000">// &gt; Got event 3, i was 1 but actural is 38 s was Hello but actural is Hi</span>
+<span style="color: #008000">// &gt; Filter 1, e is 5 passed in i is 2 s is World</span>
+<span style="color: #008000">// &gt; Filter 1, changed i is 38 s is Hi</span>
+<span style="color: #008000">// &gt; Filter 2, e is 5 passed in i is 38 s is Hi</span>
+</code></pre>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">MixinFilter</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="mixinfilter.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="mixinfilter.html#filterlist" class="tsd-kind-icon">filter<wbr>List</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixinfilter.html#appendfilter" class="tsd-kind-icon">append<wbr>Filter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixinfilter.html#mixinbeforedispatch" class="tsd-kind-icon">mixin<wbr>Before<wbr>Dispatch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixinfilter.html#removefilter" class="tsd-kind-icon">remove<wbr>Filter</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Mixin<wbr>Filter<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/quickeventparams.html" class="tsd-signature-type" data-tsd-kind="Interface">QuickEventParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="mixinfilter.html" class="tsd-signature-type" data-tsd-kind="Class">MixinFilter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/mixins/mixin_filter.ts#L77">mixins/mixin_filter.ts:77</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/quickeventparams.html" class="tsd-signature-type" data-tsd-kind="Interface">QuickEventParams</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="mixinfilter.html" class="tsd-signature-type" data-tsd-kind="Class">MixinFilter</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="filterlist" class="tsd-anchor"></a>
+					<h3>filter<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">filter<wbr>List<span class="tsd-signature-symbol">:</span> <a href="callbacklist.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackList</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/mixins/mixin_filter.ts#L77">mixins/mixin_filter.ts:77</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="appendfilter" class="tsd-anchor"></a>
+					<h3>append<wbr>Filter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">append<wbr>Filter<span class="tsd-signature-symbol">(</span>filter<span class="tsd-signature-symbol">: </span><a href="../modules.html#filter" class="tsd-signature-type" data-tsd-kind="Type alias">Filter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/mixins/mixin_filter.ts#L90">mixins/mixin_filter.ts:90</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add the <em>filter</em> to the dispatcher.<br/>
+									Return a handle which can be used in removeFilter.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>MixinFilter</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filter: <a href="../modules.html#filter" class="tsd-signature-type" data-tsd-kind="Type alias">Filter</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="mixinbeforedispatch" class="tsd-anchor"></a>
+					<h3>mixin<wbr>Before<wbr>Dispatch</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">mixin<wbr>Before<wbr>Dispatch<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/mixins/mixin_filter.ts#L107">mixins/mixin_filter.ts:107</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removefilter" class="tsd-anchor"></a>
+					<h3>remove<wbr>Filter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Filter<span class="tsd-signature-symbol">(</span>handle<span class="tsd-signature-symbol">: </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#filter" class="tsd-signature-type" data-tsd-kind="Type alias">Filter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/mixins/mixin_filter.ts#L103">mixins/mixin_filter.ts:103</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove a filter from the dispatcher.<br/>
+										<code>filter</code> can be either the filter callback or the handle returned by <code>appendFilter</code>.<br/>
+									Return true if the filter is removed successfully.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>MixinFilter</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>handle: <a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#filter" class="tsd-signature-type" data-tsd-kind="Type alias">Filter</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="../enums/argumentpassingmode.html" class="tsd-kind-icon">Argument<wbr>Passing<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="callbacklist.html" class="tsd-kind-icon">Callback<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="callbacknode.html" class="tsd-kind-icon">Callback<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="eventdispatcher.html" class="tsd-kind-icon">Event<wbr>Dispatcher</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="eventqueue.html" class="tsd-kind-icon">Event<wbr>Queue</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="mixinfilter.html" class="tsd-kind-icon">Mixin<wbr>Filter</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="mixinfilter.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="mixinfilter.html#filterlist" class="tsd-kind-icon">filter<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mixinfilter.html#appendfilter" class="tsd-kind-icon">append<wbr>Filter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mixinfilter.html#mixinbeforedispatch" class="tsd-kind-icon">mixin<wbr>Before<wbr>Dispatch</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="mixinfilter.html#removefilter" class="tsd-kind-icon">remove<wbr>Filter</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/quickeventparams.html" class="tsd-kind-icon">Quick<wbr>Event<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#callback" class="tsd-kind-icon">Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#filter" class="tsd-kind-icon">Filter</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

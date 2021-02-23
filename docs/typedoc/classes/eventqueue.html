@@ -55,10 +55,7 @@
 					<a href="../modules.html">quick-event</a>
 				</li>
 				<li>
-					<a href="../modules/event_queue.html">event_queue</a>
-				</li>
-				<li>
-					<a href="event_queue.eventqueue.html">EventQueue</a>
+					<a href="eventqueue.html">EventQueue</a>
 				</li>
 			</ul>
 			<h1>Class EventQueue</h1>
@@ -68,11 +65,24 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>EventQueue includes all features of <a href="https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html">EventDispatcher</a> and adds event queue features.<br/>
+							EventQueue is asynchronous. Events are cached in the queue when <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html#enqueue">EventQueue.enqueue</a> is called, and dispatched later when <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html#process">EventQueue.process</a> is called.<br/>
+						EventQueue is equivalent to the event system (QEvent) in Qt, or the message processing in Windows API.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="event_dispatcher.eventdispatcher.html" class="tsd-signature-type" data-tsd-kind="Class">EventDispatcher</a>
+						<a href="eventdispatcher.html" class="tsd-signature-type" data-tsd-kind="Class">EventDispatcher</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">EventQueue</span>
@@ -88,39 +98,39 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="event_queue.eventqueue.html#argumentsasarray" class="tsd-kind-icon">arguments<wbr>AsArray</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="event_queue.eventqueue.html#argumentpassingexcludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Exclude<wbr>Event</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="event_queue.eventqueue.html#argumentpassingincludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Include<wbr>Event</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="event_queue.eventqueue.html#defaultargumentpassingmode" class="tsd-kind-icon">default<wbr>Argument<wbr>Passing<wbr>Mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="eventqueue.html#argumentsasarray" class="tsd-kind-icon">arguments<wbr>AsArray</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="eventqueue.html#argumentpassingexcludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Exclude<wbr>Event</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="eventqueue.html#argumentpassingincludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Include<wbr>Event</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="eventqueue.html#defaultargumentpassingmode" class="tsd-kind-icon">default<wbr>Argument<wbr>Passing<wbr>Mode</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#appendlistener" class="tsd-kind-icon">append<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#applydispatch" class="tsd-kind-icon">apply<wbr>Dispatch</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#clearevents" class="tsd-kind-icon">clear<wbr>Events</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#dispatch" class="tsd-kind-icon">dispatch</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#empty" class="tsd-kind-icon">empty</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#enqueue" class="tsd-kind-icon">enqueue</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#foreachif" class="tsd-kind-icon">for<wbr>Each<wbr>If</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#hasanylistener" class="tsd-kind-icon">has<wbr>Any<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#insertlistener" class="tsd-kind-icon">insert<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#peekevent" class="tsd-kind-icon">peek<wbr>Event</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#process" class="tsd-kind-icon">process</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#processif" class="tsd-kind-icon">process<wbr>If</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#processone" class="tsd-kind-icon">process<wbr>One</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="event_queue.eventqueue.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="event_queue.eventqueue.html#takeevent" class="tsd-kind-icon">take<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#appendlistener" class="tsd-kind-icon">append<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#applydispatch" class="tsd-kind-icon">apply<wbr>Dispatch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#clearevents" class="tsd-kind-icon">clear<wbr>Events</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#dispatch" class="tsd-kind-icon">dispatch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#empty" class="tsd-kind-icon">empty</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#enqueue" class="tsd-kind-icon">enqueue</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#foreachif" class="tsd-kind-icon">for<wbr>Each<wbr>If</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#hasanylistener" class="tsd-kind-icon">has<wbr>Any<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#insertlistener" class="tsd-kind-icon">insert<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#peekevent" class="tsd-kind-icon">peek<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#process" class="tsd-kind-icon">process</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#processif" class="tsd-kind-icon">process<wbr>If</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#processone" class="tsd-kind-icon">process<wbr>One</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="eventqueue.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventqueue.html#takeevent" class="tsd-kind-icon">take<wbr>Event</a></li>
 							</ul>
 						</section>
 					</div>
@@ -132,23 +142,23 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>Queue<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/types.quickeventparams.html" class="tsd-signature-type" data-tsd-kind="Interface">QuickEventParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="event_queue.eventqueue.html" class="tsd-signature-type" data-tsd-kind="Class">EventQueue</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>Queue<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">?: </span><a href="../interfaces/quickeventparams.html" class="tsd-signature-type" data-tsd-kind="Interface">QuickEventParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="eventqueue.html" class="tsd-signature-type" data-tsd-kind="Class">EventQueue</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#constructor">constructor</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L5">event_queue.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L13">event_queue.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/types.quickeventparams.html" class="tsd-signature-type" data-tsd-kind="Interface">QuickEventParams</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> params: <a href="../interfaces/quickeventparams.html" class="tsd-signature-type" data-tsd-kind="Interface">QuickEventParams</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="event_queue.eventqueue.html" class="tsd-signature-type" data-tsd-kind="Class">EventQueue</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="eventqueue.html" class="tsd-signature-type" data-tsd-kind="Class">EventQueue</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -160,20 +170,20 @@
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> arguments<wbr>AsArray</h3>
 					<div class="tsd-signature tsd-kind-icon">arguments<wbr>AsArray<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#argumentsasarray">argumentsAsArray</a></p>
+						<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#argumentsasarray">argumentsAsArray</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L55">event_dispatcher.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L55">event_dispatcher.ts:55</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="argumentpassingexcludeevent" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> <span class="tsd-flag ts-flagStatic">Static</span> argument<wbr>Passing<wbr>Exclude<wbr>Event</h3>
-					<div class="tsd-signature tsd-kind-icon">argument<wbr>Passing<wbr>Exclude<wbr>Event<span class="tsd-signature-symbol">:</span> <a href="../enums/types.argumentpassingmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ArgumentPassingMode</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">argument<wbr>Passing<wbr>Exclude<wbr>Event<span class="tsd-signature-symbol">:</span> <a href="../enums/argumentpassingmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ArgumentPassingMode</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#argumentpassingexcludeevent">argumentPassingExcludeEvent</a></p>
+						<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#argumentpassingexcludeevent">argumentPassingExcludeEvent</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L45">event_dispatcher.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L45">event_dispatcher.ts:45</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -194,11 +204,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="argumentpassingincludeevent" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> <span class="tsd-flag ts-flagStatic">Static</span> argument<wbr>Passing<wbr>Include<wbr>Event</h3>
-					<div class="tsd-signature tsd-kind-icon">argument<wbr>Passing<wbr>Include<wbr>Event<span class="tsd-signature-symbol">:</span> <a href="../enums/types.argumentpassingmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ArgumentPassingMode</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">argument<wbr>Passing<wbr>Include<wbr>Event<span class="tsd-signature-symbol">:</span> <a href="../enums/argumentpassingmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ArgumentPassingMode</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#argumentpassingincludeevent">argumentPassingIncludeEvent</a></p>
+						<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#argumentpassingincludeevent">argumentPassingIncludeEvent</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L37">event_dispatcher.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L37">event_dispatcher.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -219,11 +229,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 					<a name="defaultargumentpassingmode" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> <span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Argument<wbr>Passing<wbr>Mode</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Argument<wbr>Passing<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/types.argumentpassingmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ArgumentPassingMode</a><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Argument<wbr>Passing<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/argumentpassingmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ArgumentPassingMode</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#defaultargumentpassingmode">defaultArgumentPassingMode</a></p>
+						<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#defaultargumentpassingmode">defaultArgumentPassingMode</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L53">event_dispatcher.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L53">event_dispatcher.ts:53</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -248,14 +258,14 @@
 					<a name="appendlistener" class="tsd-anchor"></a>
 					<h3>append<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">append<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">append<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#appendlistener">appendListener</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#appendlistener">appendListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L88">event_dispatcher.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L88">event_dispatcher.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -279,10 +289,10 @@
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>callback: <a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+									<h5>callback: <a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -295,9 +305,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#applydispatch">applyDispatch</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#applydispatch">applyDispatch</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L199">event_dispatcher.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L199">event_dispatcher.ts:199</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -332,9 +342,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L62">event_queue.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L114">event_queue.ts:114</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clear all queued events without dispatching them.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -348,9 +368,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#dispatch">dispatch</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#dispatch">dispatch</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L186">event_dispatcher.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L186">event_dispatcher.ts:186</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -384,9 +404,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L58">event_queue.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L105">event_queue.ts:105</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return true if there is no any event in the event queue, false if there are any events in the event queue.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -401,9 +431,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L11">event_queue.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L27">event_queue.ts:27</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Put an event into the event queue.<br/>
+										All arguments are copied to internal data structure.<br/>
+									The time complexity is O(1).</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -418,14 +460,14 @@
 					<a name="foreach" class="tsd-anchor"></a>
 					<h3>for<wbr>Each</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#foreach">forEach</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#foreach">forEach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L243">event_dispatcher.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L243">event_dispatcher.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -446,18 +488,18 @@
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>func: <span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
+									<h5>func: <span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
 											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>callback: <a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+															<h5>callback: <a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -475,14 +517,14 @@
 					<a name="foreachif" class="tsd-anchor"></a>
 					<h3>for<wbr>Each<wbr>If</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<wbr>If<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<wbr>If<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, func<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#foreachif">forEachIf</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#foreachif">forEachIf</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L259">event_dispatcher.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L259">event_dispatcher.ts:259</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -502,18 +544,18 @@
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>func: <span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
+									<h5>func: <span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-signature">
 											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>callback: <a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+															<h5>callback: <a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -536,9 +578,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#hasanylistener">hasAnyListener</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#hasanylistener">hasAnyListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L170">event_dispatcher.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L170">event_dispatcher.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -565,14 +607,14 @@
 					<a name="haslistener" class="tsd-anchor"></a>
 					<h3>has<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, handle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, handle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#haslistener">hasListener</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#haslistener">hasListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L154">event_dispatcher.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L154">event_dispatcher.ts:154</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -592,7 +634,7 @@
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>handle: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+									<h5>handle: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -603,14 +645,14 @@
 					<a name="insertlistener" class="tsd-anchor"></a>
 					<h3>insert<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">insert<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a>, before<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a>, before<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#insertlistener">insertListener</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#insertlistener">insertListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L121">event_dispatcher.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L121">event_dispatcher.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -633,13 +675,13 @@
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>callback: <a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+									<h5>callback: <a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 								</li>
 								<li>
-									<h5>before: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+									<h5>before: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -653,9 +695,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L66">event_queue.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L126">event_queue.ts:126</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return a queued event from the queue.<br/>
+										A queued event is an array with all arguments passed to <a href="https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html#enqueue">EventQueue.enqueue</a>.<br/>
+										If the queue is empty, the function returns null.<br/>
+									After the function returns, the original even is still in the queue.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
@@ -664,14 +719,14 @@
 					<a name="prependlistener" class="tsd-anchor"></a>
 					<h3>prepend<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></li>
+						<li class="tsd-signature tsd-kind-icon">prepend<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, callback<span class="tsd-signature-symbol">: </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#prependlistener">prependListener</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#prependlistener">prependListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L104">event_dispatcher.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L104">event_dispatcher.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -694,10 +749,10 @@
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>callback: <a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+									<h5>callback: <a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -711,9 +766,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L15">event_queue.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L38">event_queue.ts:38</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Process the event queue. All events in the event queue are dispatched once and then removed from the queue.<br/>
+										The function returns true if any events were processed, false if no event was processed.<br/>
+									Any new events added to the queue during <code>process()</code> are not dispatched during current <code>process()</code>.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -728,9 +795,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L30">event_queue.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L71">event_queue.ts:71</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Process the event queue. Before processing an event, the event is passed to <code>func</code> and the event will be processed only if <code>func</code> returns true.<br/>
+										<code>func</code> takes exactly the same arguments as <code>EventQueue.enqueue</code>, and returns a boolean value.<br/>
+										<code>processIf</code> returns true if any event was dispatched, false if no event was dispatched.<br/>
+									<code>processIf</code> has some good use scenarios:<br/></p>
+									<ol>
+										<li>Process certain events. For example, in a GUI application, the UI related events may be only desired to processed by one module.<br/></li>
+										<li>Process the events until certain time. For example, in a game engine, the event process may be limited to only several milliseconds, the remaining events will be process in next game loop.</li>
+									</ol>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -769,9 +853,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L24">event_queue.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L54">event_queue.ts:54</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Process one event in the event queue. The first event in the event queue is dispatched once and then removed from the queue.<br/>
+										The function returns true if one event was processed, false if no event was processed.<br/>
+									Any new events added to the queue during <code>processOne()</code> are not dispatched during current <code>processOne()</code>.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -780,14 +876,14 @@
 					<a name="removelistener" class="tsd-anchor"></a>
 					<h3>remove<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, handle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, handle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="event_dispatcher.eventdispatcher.html">EventDispatcher</a>.<a href="event_dispatcher.eventdispatcher.html#removelistener">removeListener</a></p>
+								<p>Inherited from <a href="eventdispatcher.html">EventDispatcher</a>.<a href="eventdispatcher.html#removelistener">removeListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_dispatcher.ts#L136">event_dispatcher.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_dispatcher.ts#L136">event_dispatcher.ts:136</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -809,7 +905,7 @@
 									<h5>event: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>handle: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callback_node.callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules/types.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
+									<h5>handle: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="callbacknode.html" class="tsd-signature-type" data-tsd-kind="Class">CallbackNode</a><span class="tsd-signature-symbol"> | </span><a href="../modules.html#callback" class="tsd-signature-type" data-tsd-kind="Type alias">Callback</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -826,9 +922,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/2286596/src/event_queue.ts#L70">event_queue.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/ArcherGu/quick-event/blob/e8a8dcc/src/event_queue.ts#L138">event_queue.ts:138</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return an event from the queue and remove the original event from the queue.<br/>
+										If the queue is empty, the function returns null.<br/>
+									After the function returns, the original even is removed from the queue.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>EventQueue</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
@@ -841,109 +949,112 @@
 					<li class=" ">
 						<a href="../modules.html">Exports</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/callback_list.html">callback_<wbr>list</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/callback_node.html">callback_<wbr>node</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/event_dispatcher.html">event_<wbr>dispatcher</a>
-					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/event_queue.html">event_<wbr>queue</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/index.html">index</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/mixins_mixin_filter.html">mixins/mixin_<wbr>filter</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/types.html">types</a>
-					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="../enums/argumentpassingmode.html" class="tsd-kind-icon">Argument<wbr>Passing<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="callbacklist.html" class="tsd-kind-icon">Callback<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="callbacknode.html" class="tsd-kind-icon">Callback<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="eventdispatcher.html" class="tsd-kind-icon">Event<wbr>Dispatcher</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="event_queue.eventqueue.html" class="tsd-kind-icon">Event<wbr>Queue</a>
+					<li class="current tsd-kind-class">
+						<a href="eventqueue.html" class="tsd-kind-icon">Event<wbr>Queue</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="eventqueue.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="event_queue.eventqueue.html#argumentsasarray" class="tsd-kind-icon">arguments<wbr>AsArray</a>
+								<a href="eventqueue.html#argumentsasarray" class="tsd-kind-icon">arguments<wbr>AsArray</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="event_queue.eventqueue.html#argumentpassingexcludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Exclude<wbr>Event</a>
+								<a href="eventqueue.html#argumentpassingexcludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Exclude<wbr>Event</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="event_queue.eventqueue.html#argumentpassingincludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Include<wbr>Event</a>
+								<a href="eventqueue.html#argumentpassingincludeevent" class="tsd-kind-icon">argument<wbr>Passing<wbr>Include<wbr>Event</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="event_queue.eventqueue.html#defaultargumentpassingmode" class="tsd-kind-icon">default<wbr>Argument<wbr>Passing<wbr>Mode</a>
+								<a href="eventqueue.html#defaultargumentpassingmode" class="tsd-kind-icon">default<wbr>Argument<wbr>Passing<wbr>Mode</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#appendlistener" class="tsd-kind-icon">append<wbr>Listener</a>
+								<a href="eventqueue.html#appendlistener" class="tsd-kind-icon">append<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#applydispatch" class="tsd-kind-icon">apply<wbr>Dispatch</a>
+								<a href="eventqueue.html#applydispatch" class="tsd-kind-icon">apply<wbr>Dispatch</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#clearevents" class="tsd-kind-icon">clear<wbr>Events</a>
+								<a href="eventqueue.html#clearevents" class="tsd-kind-icon">clear<wbr>Events</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#dispatch" class="tsd-kind-icon">dispatch</a>
+								<a href="eventqueue.html#dispatch" class="tsd-kind-icon">dispatch</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#empty" class="tsd-kind-icon">empty</a>
+								<a href="eventqueue.html#empty" class="tsd-kind-icon">empty</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#enqueue" class="tsd-kind-icon">enqueue</a>
+								<a href="eventqueue.html#enqueue" class="tsd-kind-icon">enqueue</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
+								<a href="eventqueue.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#foreachif" class="tsd-kind-icon">for<wbr>Each<wbr>If</a>
+								<a href="eventqueue.html#foreachif" class="tsd-kind-icon">for<wbr>Each<wbr>If</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#hasanylistener" class="tsd-kind-icon">has<wbr>Any<wbr>Listener</a>
+								<a href="eventqueue.html#hasanylistener" class="tsd-kind-icon">has<wbr>Any<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a>
+								<a href="eventqueue.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#insertlistener" class="tsd-kind-icon">insert<wbr>Listener</a>
+								<a href="eventqueue.html#insertlistener" class="tsd-kind-icon">insert<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#peekevent" class="tsd-kind-icon">peek<wbr>Event</a>
+								<a href="eventqueue.html#peekevent" class="tsd-kind-icon">peek<wbr>Event</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a>
+								<a href="eventqueue.html#prependlistener" class="tsd-kind-icon">prepend<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#process" class="tsd-kind-icon">process</a>
+								<a href="eventqueue.html#process" class="tsd-kind-icon">process</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#processif" class="tsd-kind-icon">process<wbr>If</a>
+								<a href="eventqueue.html#processif" class="tsd-kind-icon">process<wbr>If</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#processone" class="tsd-kind-icon">process<wbr>One</a>
+								<a href="eventqueue.html#processone" class="tsd-kind-icon">process<wbr>One</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="event_queue.eventqueue.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a>
+								<a href="eventqueue.html#removelistener" class="tsd-kind-icon">remove<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="event_queue.eventqueue.html#takeevent" class="tsd-kind-icon">take<wbr>Event</a>
+								<a href="eventqueue.html#takeevent" class="tsd-kind-icon">take<wbr>Event</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="mixinfilter.html" class="tsd-kind-icon">Mixin<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/quickeventparams.html" class="tsd-kind-icon">Quick<wbr>Event<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#callback" class="tsd-kind-icon">Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#filter" class="tsd-kind-icon">Filter</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -954,7 +1065,8 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
@@ -962,13 +1074,13 @@
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>
