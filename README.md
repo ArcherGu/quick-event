@@ -123,7 +123,7 @@ yarn test
 
 quick-event is rewritten from [wqking/eventjs](https://github.com/wqking/eventjs).
 
-[Wang Qi(qking)](https://github.com/wqking) is my friend and teacher, we have developed some projects together. He's a wide-ranging, experienced developer and I've learned a lot from him.
+[Wang Qi(wqking)](https://github.com/wqking) is my friend and teacher, we have developed some projects together. He's a wide-ranging, experienced developer and I've learned a lot from him.
 
 ## License
 
