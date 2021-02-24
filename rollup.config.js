@@ -14,17 +14,17 @@ const config = [
     {
         input: 'src/index.ts',
         output: [{
-            file: 'dist/quick-event.mjs',
+            file: 'dist/quick-event.esm.js',
             format: 'es',
             banner
         }, {
-            file: 'dist/quick-event.cjs',
+            file: 'dist/quick-event.common.js',
             format: 'cjs',
             banner
         }, {
             file: 'dist/quick-event.js',
             format: 'umd',
-            name: 'quick-event',
+            name: 'QuickEvent',
             banner
         }],
         plugins: [

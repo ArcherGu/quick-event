@@ -5,6 +5,6 @@
     ],
     "excludePrivate": true,
     "includes": "./docs/md",
-    "emit": true,
+    "includeVersion": true,
     "out": "./docs/typedoc"
 }

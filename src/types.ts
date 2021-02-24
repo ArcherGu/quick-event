@@ -161,7 +161,7 @@ export interface QuickEventParams {
     argumentsAsArray?: boolean;
 
     /**
-     * A mixin is used to inject code in the EventDispatcher/EventQueue inheritance hierarchy to extend the functionalities. For more details, please read the [document of mixins]().
+     * A mixin is used to inject code in the EventDispatcher/EventQueue inheritance hierarchy to extend the functionalities. For more details, please read the [document of mixins](https://github.com/ArcherGu/quick-event/blob/main/docs/md/mixins.md).
      *
      * @apply [EventDispatcher](https://archergu.github.io/quick-event/classes/event_dispatcher.eventdispatcher.html), [EventQueue](https://archergu.github.io/quick-event/classes/event_queue.eventqueue.html)
      * @default undefined

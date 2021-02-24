@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>quick-event</title>
-	<meta name="description" content="Documentation for quick-event">
+	<title>quick-event - v0.1.0</title>
+	<meta name="description" content="Documentation for quick-event - v0.1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script async src="assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">quick-event</a>
+					<a href="index.html" class="title">quick-event - v0.1.0</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>quick-event</h1>
+			<h1>quick-event - v0.1.0</h1>
 		</div>
 	</div>
 </header>
@@ -61,8 +61,126 @@
 				<a href="#quick-event" id="quick-event" style="color: inherit; text-decoration: none;">
 					<h1>Quick Event</h1>
 				</a>
-				<p>quick-event is a TypeScript event library that provides tools that enable your application components to communicate with each other by dispatching events and listening for them. With eventpp you can easily implement signal/slot mechanism, or observer pattern.</p>
+				<p>quick-event is a TypeScript event library that provides tools that enable your application components to communicate with each other by dispatching events and listening for them. With quick-event you can easily implement signal/slot mechanism, or observer pattern.</p>
+				<a href="#quick-start" id="quick-start" style="color: inherit; text-decoration: none;">
+					<h2>Quick start</h2>
+				</a>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h3>Install</h3>
+				</a>
+				<a href="#install-with-npm-or-yarn" id="install-with-npm-or-yarn" style="color: inherit; text-decoration: none;">
+					<h4>Install with NPM or Yarn</h4>
+				</a>
+				<pre><code class="language-bash"><span style="color: #008000"># npm</span>
+<span style="color: #000000">npm install --save quick-event</span>
+<span style="color: #008000"># yarn</span>
+<span style="color: #000000">yarn add --save quick-event</span>
+</code></pre>
+				<a href="#or-link-to-the-source-code-directly" id="or-link-to-the-source-code-directly" style="color: inherit; text-decoration: none;">
+					<h4>Or link to the source code directly</h4>
+				</a>
+				<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;dist/quick-event.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
+				<p>Name <code>QuickEvent</code> is ready to use and no need to import.</p>
+				<a href="#or-cdn" id="or-cdn" style="color: inherit; text-decoration: none;">
+					<h4>Or CDN</h4>
+				</a>
+				<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/quick-event/dist/quick-event.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
+				<p>Name <code>QuickEvent</code> is ready to use and no need to import.</p>
+				<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
+					<h2>How to use</h2>
+				</a>
+				<a href="#using-callbacklist" id="using-callbacklist" style="color: inherit; text-decoration: none;">
+					<h3>Using CallbackList</h3>
+				</a>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">CallbackList</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;quick-event&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">callbackList</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">CallbackList</span><span style="color: #000000">();</span>
+<span style="color: #001080">callbackList</span><span style="color: #000000">.</span><span style="color: #795E26">append</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Got callback 1.&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">callbackList</span><span style="color: #000000">.</span><span style="color: #795E26">append</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Got callback 2.&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">callbackList</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">();</span>
+</code></pre>
+				<a href="#using-eventdispatcher" id="using-eventdispatcher" style="color: inherit; text-decoration: none;">
+					<h3>Using EventDispatcher</h3>
+				</a>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">EventDispatcher</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;quick-event&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">dispatcher</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventDispatcher</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Got event: 3.&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;my-event&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Got event: my-event.&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;my-event, () =&gt; </span><span style="color: #CD3131">{</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Got another event: my-event.&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">);</span>
+<span style="color: #001080">dispatcher</span><span style="color: #000000">.</span><span style="color: #795E26">dispatch</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;my-event&#039;</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#using-eventqueue" id="using-eventqueue" style="color: inherit; text-decoration: none;">
+					<h3>Using EventQueue</h3>
+				</a>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">EventQueue</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;quick-event&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">queue</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">EventQueue</span><span style="color: #000000">();</span>
+<span style="color: #001080">queue</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, (</span><span style="color: #001080">s</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">, </span><span style="color: #001080">n</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Got event: 3, s is </span><span style="color: #0000FF">${</span><span style="color: #001080">s</span><span style="color: #0000FF">}</span><span style="color: #A31515">, n is </span><span style="color: #0000FF">${</span><span style="color: #001080">n</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">queue</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">, (</span><span style="color: #001080">s</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">, </span><span style="color: #001080">n</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Got event: 5, s is </span><span style="color: #0000FF">${</span><span style="color: #001080">s</span><span style="color: #0000FF">}</span><span style="color: #A31515">, n is </span><span style="color: #0000FF">${</span><span style="color: #001080">n</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+<span style="color: #001080">queue</span><span style="color: #000000">.</span><span style="color: #795E26">appendListener</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">, (</span><span style="color: #001080">s</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">, </span><span style="color: #001080">n</span><span style="color: #000000">: </span><span style="color: #267F99">any</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Got another event: 5, s is </span><span style="color: #0000FF">${</span><span style="color: #001080">s</span><span style="color: #0000FF">}</span><span style="color: #A31515">, n is </span><span style="color: #0000FF">${</span><span style="color: #001080">n</span><span style="color: #0000FF">}</span><span style="color: #A31515">`</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// Enqueue the events, the first argument is always the event type.</span>
+<span style="color: #008000">// The listeners are not triggered during enqueue.</span>
+<span style="color: #001080">queue</span><span style="color: #000000">.</span><span style="color: #795E26">enqueue</span><span style="color: #000000">(</span><span style="color: #098658">3</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;Hello&#039;</span><span style="color: #000000">, </span><span style="color: #098658">38</span><span style="color: #000000">);</span>
+<span style="color: #001080">queue</span><span style="color: #000000">.</span><span style="color: #795E26">enqueue</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;World&#039;</span><span style="color: #000000">, </span><span style="color: #098658">58</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// Process the event queue, dispatch all queued events.</span>
+<span style="color: #001080">queue</span><span style="color: #000000">.</span><span style="color: #795E26">process</span><span style="color: #000000">();</span>
+</code></pre>
+				<a href="#facts-and-features" id="facts-and-features" style="color: inherit; text-decoration: none;">
+					<h2>Facts and features</h2>
+				</a>
+				<ul>
+					<li><strong>Powerful</strong><ul>
+							<li>Supports synchronous event dispatching and asynchronous event queue.</li>
+							<li>Supports event filter via mixins.</li>
+							<li>Configurable and extensible.</li>
+						</ul>
+					</li>
+					<li><strong>Robust</strong><ul>
+							<li>Supports nested event. During the process of handling an event, a listener can safely dispatch event and append/prepend/insert/remove other listeners.</li>
+							<li>Doesn&#39;t depend on HTML DOM. eventjs works for non-browser environment.</li>
+							<li>Well tested. Backed by unit tests.</li>
+						</ul>
+					</li>
+					<li><strong>Fast</strong><ul>
+							<li>Much faster than HTML DOM event listener system.</li>
+							<li>The EventQueue can process 5M events in 1 second (5K events per millisecond, when there are 100 event in the queue).</li>
+							<li>The CallbackList can invoke 1M callbacks in 1 second (1000 callbacks per millisecond).</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
 				<p><a href="https://archergu.github.io/quick-event/typedoc/index.html">Documentation</a></p>
+				<a href="#run-the-unit-tests" id="run-the-unit-tests" style="color: inherit; text-decoration: none;">
+					<h2>Run the unit tests</h2>
+				</a>
+				<pre><code class="language-bash"><span style="color: #000000">yarn </span><span style="color: #795E26">test</span>
+</code></pre>
 				<a href="#rewrite" id="rewrite" style="color: inherit; text-decoration: none;">
 					<h2>Rewrite</h2>
 				</a>
@@ -71,7 +189,7 @@
 				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
 					<h2>License</h2>
 				</a>
-				<p>The code in this project is licensed under MIT license.</p>
+				<p>The code in this project is licensed under <a href="https://github.com/ArcherGu/quick-event/blob/main/LICENSE">MIT license</a>.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
