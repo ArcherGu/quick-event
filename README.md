@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="200" src="https://github.com/ArcherGu/quick-event/blob/main/MiGeo.png" alt="logo">
+    <img width="200" src="https://github.com/ArcherGu/quick-event/blob/main/logo.png" alt="logo">
 </p>
 <br/>
 <p align="center">
