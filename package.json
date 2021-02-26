@@ -1,6 +1,6 @@
 {
     "name": "quick-event",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "description": "quick-event is a TypeScript event library that provides tools that enable your application components to communicate with each other by dispatching events and listening for them. With eventpp you can easily implement signal/slot mechanism, or observer pattern.",
     "main": "dist/quick-event.common.js",
     "module": "dist/quick-event.esm.js",
@@ -9,7 +9,8 @@
     "source": "src/index.ts",
     "files": [
         "dist",
-        "src"
+        "src",
+        "logo.png"
     ],
     "scripts": {
         "build": "rimraf dist && rollup -c && terser dist/quick-event.js -c -m --comments -o dist/quick-event.min.js",

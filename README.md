@@ -1,4 +1,20 @@
-# Quick Event
+<p align="center">
+    <img width="200" src="https://github.com/ArcherGu/quick-event/blob/main/MiGeo.png" alt="logo">
+</p>
+<br/>
+<p align="center">
+    <a href="https://npmjs.com/package/quick-event">
+        <img src="https://img.shields.io/npm/v/quick-event.svg?style=flat-square" alt="npm package">
+    </a>
+    <a href="https://github.com/ArcherGu/quick-event">
+        <img src="https://img.shields.io/github/checks-status/archergu/quick-event/main?style=flat-square" alt="checks">
+    </a>
+    <a href="https://github.com/ArcherGu/quick-event/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/archergu/quick-event?style=flat-square" alt="license">
+    </a>
+</p>
+
+# Quick Event ⚡
 
 quick-event is a TypeScript event library that provides tools that enable your application components to communicate with each other by dispatching events and listening for them. With quick-event you can easily implement signal/slot mechanism, or observer pattern.
 
